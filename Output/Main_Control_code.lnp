@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"..\output\startup_stm32f10x_hd.o"
+"..\output\main.o"
+"..\output\oled.o"
+"..\output\stm32f10x_it.o"
+"..\output\tempad.o"
+"..\output\usart.o"
+"..\output\command.o"
+"..\output\misc.o"
+"..\output\stm32f10x_dbgmcu.o"
+"..\output\stm32f10x_flash.o"
+"..\output\stm32f10x_gpio.o"
+"..\output\stm32f10x_rcc.o"
+"..\output\stm32f10x_tim.o"
+"..\output\stm32f10x_usart.o"
+"..\output\stm32f10x_dma.o"
+"..\output\stm32f10x_adc.o"
+"..\output\core_cm3.o"
+"..\output\system_stm32f10x.o"
+--library_type=microlib --strict --scatter "..\Output\Main_Control_code.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "..\Listing\Main_Control_code.map" -o ..\Output\Main_Control_code.axf

@@ -1,0 +1,241 @@
+#ifndef __GUI_H
+#define __GUI_H
+#include "stm32f10x.h"
+u8 refresh_allow = 1;
+u8 meanu = 0;
+u8 choose_num;
+u8 case_num;//子项数目
+u8 sure_press;
+u8 user_config[10] = {0}; //0 Debug_module/master_module 1 bypass enable/disable
+void Main_meanu()
+{
+
+    switch (meanu)
+    {
+    case 0:
+
+        OLED_Clear();
+        choose_num = 0;
+        LCD_P8x16Str(20, 0, "SOCKET WIFI ");
+        if (user_config[0] == 0)
+            LCD_P6x8Str(0, 2, "1.MASTER_MODULE");
+        else
+            LCD_P6x8Str(0, 2, "1.DEBUG_MODULE");
+        LCD_P6x8Str(0, 3, "2.WIFI_SETTING");
+        LCD_P6x8Str(0, 4, "3.COMMAND_TEST");
+        if (user_config[1] == 0)
+            LCD_P6x8Str(0, 5, "4.COMMAND_CONNECT");
+        else
+            LCD_P6x8Str(0, 5, "4.COMMAND_BYPASS");
+        refresh_allow = 0;
+        case_num = 4;
+        LCD_P6x8Str(120,  2, "<");
+        break;
+
+    case 10: //一级菜单起始
+
+        OLED_Clear();
+        choose_num = 0;
+        LCD_P8x16Str(20, 0, "CHOOSE CASE");
+        LCD_P6x8Str(0, 2, "1.MASTER_MODULE");
+        LCD_P6x8Str(0, 3, "2.DEBUG_MOUDLE");
+        refresh_allow = 0;
+        case_num = 2;
+        LCD_P6x8Str(120,  2, "<");
+        break;
+
+    case 20: //一级菜单起始
+
+        OLED_Clear();
+        choose_num = 0;
+        LCD_P8x16Str(20, 0, "TEST_MODULE");
+        refresh_allow = 0;
+        case_num = 2;
+        break;
+
+    case 40: //一级菜单起始
+
+        OLED_Clear();
+        choose_num = 0;
+        LCD_P8x16Str(20, 0, "CHOOSE CASE");
+        LCD_P6x8Str(0, 2, "1.BYPASS_DISABLE ");
+        LCD_P6x8Str(0, 3, "2.BYPASS_ENABLE");
+        refresh_allow = 0;
+        case_num = 2;
+        LCD_P6x8Str(120,  2, "<");
+        break;
+
+    }
+
+
+}
+
+
+void meanu_cut()
+{
+    if (sure_press)
+    {
+        switch (meanu)
+        {
+        case 0:
+            switch (choose_num)
+            {
+            case 0:
+
+                meanu = 10;
+                refresh_allow = 1;
+                sure_press = 0;
+                break;
+
+            case 2:
+
+                meanu = 20;
+                refresh_allow = 1;
+                sure_press = 0;
+                break;
+
+            case 3:
+
+                if (user_config[0] == 1)
+                {
+                    meanu = 40;
+                    refresh_allow = 1;
+                    sure_press = 0;
+                }
+                break;
+            }
+            break;
+
+        case 10:
+
+            switch (choose_num)
+            {
+            case 0:
+
+                user_config[0] = 0;
+                user_config[1] = 0;
+                meanu = 0;
+                refresh_allow = 1;
+                sure_press = 0;
+                break;
+
+            case 1:
+
+                user_config[0] = 1;
+                meanu = 0;
+                refresh_allow = 1;
+                sure_press = 0;
+                break;
+
+            }
+            break;
+
+        case 40:
+
+            switch (choose_num)
+            {
+            case 0:
+
+                user_config[1] = 0;
+                meanu = 0;
+                refresh_allow = 1;
+                sure_press = 0;
+                break;
+
+            case 1:
+
+                user_config[1] = 1;
+                meanu = 0;
+                refresh_allow = 1;
+                sure_press = 0;
+                break;
+
+            }
+            break;
+        }
+
+        sure_press = 0;
+    }
+
+
+
+}
+
+void gui_choose()
+{
+    if (key_pre == 0)
+    {
+        /*        beep = 1;
+                delay_ms(30);
+                beep = 0;*/
+        refresh_allow = 0;
+        LCD_P6x8Str(120,   choose_num + 2, " ");
+        if (choose_num <= 0)
+            choose_num = 1;
+        choose_num--;
+        LCD_P6x8Str(120,  choose_num + 2, "<");
+        while (key_pre == 0);
+    }
+
+    if (key_next == 0)
+    {
+        /*        beep = 1;
+                delay_ms(30);
+                beep = 0;*/
+        refresh_allow = 0;
+        LCD_P6x8Str(120,   choose_num + 2, " ");
+        choose_num++;
+        if (choose_num >= case_num - 1)
+            choose_num = case_num - 1;
+        LCD_P6x8Str(120,  choose_num + 2, "<");
+        while (key_next == 0);
+    }
+
+    if (key_sure == 0)
+    {
+        /*        beep = 1;
+                delay_ms(30);
+                beep = 0;*/
+        refresh_allow = 0;
+        sure_press = 1;
+        //   choose_num = 0;
+
+        while (key_sure == 0);
+    }
+    if (key_cancel == 0)
+    {
+        /*        beep = 1;
+                delay_ms(30);
+                beep = 0;*/
+        // refresh_allow = 0;
+        meanu = 0;
+        refresh_allow = 1;
+        choose_num = 0;
+        while (key_cancel == 0);
+    }
+
+
+
+
+
+}
+
+void gui_show()
+{
+
+    if (refresh_allow)
+        Main_meanu();
+    gui_choose();
+    meanu_cut();
+
+
+
+}
+
+
+
+
+
+
+
+#endif
