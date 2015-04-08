@@ -440,6 +440,16 @@
               <FileType>1</FileType>
               <FilePath>..\USERHARDWARE\UART\usart.c</FilePath>
             </File>
+            <File>
+              <FileName>command.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USERHARDWARE\command.c</FilePath>
+            </File>
+            <File>
+              <FileName>gui.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\USERHARDWARE\gui.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

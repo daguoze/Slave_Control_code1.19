@@ -65,12 +65,27 @@ void relay_splithex(u8 hex)
     relay7 = (hex & 0x01);
 }
 
+//高位
+//+  +  +  +  +  +  +  +
+//0  0  0 2h |    
+//   0  1 4h |    PHY
+//   1  0 6h |  ADDRESS
+//   1  1 8h |
+struct socket_type{
+u8 address;
+u8 hole_type;
+	u8 select_array[8][2];
 
+}get_sockettype;
 
 void module_discriminate()
 {
+	
+// struct socket_type  get_sockettype;
 
-    if (gethex() == 0x00)
+	get_sockettype.address= gethex();
+	get_sockettype.address=get_sockettype.address<<4;
+    if (get_sockettype.address==0x00)//相对地址
     {
         beep = 1;
         delay_ms(100);
@@ -83,17 +98,21 @@ void module_discriminate()
     }//主机模式
     else
     {
-        beep = 1;
+   //   combinechar=  gethex();
+	
+			beep = 1;
         delay_ms(100);
         beep = 0;
         module_flag = 0;//从机模式
     }
+				get_sockettype.hole_type= PBin(3) << 1 | PBin(4) ;
+		
 
 }
 
 void init_all()
 {
-    u16 start_delay = 0;
+//    u16 start_delay = 0;
     SystemInit();
     GPIO_Config();
 

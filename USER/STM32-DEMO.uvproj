@@ -362,7 +362,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER, STM32F10X_HD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CMSIS;..\USER;..\FWlib\inc;..\FWlib\src;..\USERHARDWARE\OLED;..\USERHARDWARE;..\USERHARDWARE\TEMP;..\USERHARDWARE\UART</IncludePath>
+              <IncludePath>..\CMSIS;..\USER;..\FWlib\inc;..\FWlib\src;..\USERHARDWARE;..\USERHARDWARE\TEMP;..\USERHARDWARE\UART;..\USERHARDWARE\OLED</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -421,11 +421,6 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>oled.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\USERHARDWARE\OLED\oled.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f10x_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\stm32f10x_it.c</FilePath>
@@ -444,11 +439,6 @@
               <FileName>command.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USERHARDWARE\command.c</FilePath>
-            </File>
-            <File>
-              <FileName>gui.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\USERHARDWARE\gui.h</FilePath>
             </File>
           </Files>
         </Group>
