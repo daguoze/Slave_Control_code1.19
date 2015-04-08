@@ -62,7 +62,7 @@ void USART3_Config(void)
     GPIO_Init(GPIOB, &GPIO_InitStructure);
 
     /* USART2 mode config */
-    USART_InitStructure.USART_BaudRate = 115200;
+    USART_InitStructure.USART_BaudRate = 9600;
     USART_InitStructure.USART_WordLength = USART_WordLength_8b;
     USART_InitStructure.USART_StopBits = USART_StopBits_1;
     USART_InitStructure.USART_Parity = USART_Parity_No ;
@@ -100,53 +100,53 @@ int fputc(int ch, FILE *f)
  * 返回  ：无
  * 调用  ：被USART1_printf()调用
  */
-static char *itoa(int value, char *string, int radix)
-{
-    int     i, d;
-    int     flag = 0;
-    char    *ptr = string;
+//static char *itoa(int value, char *string, int radix)
+//{
+//    int     i, d;
+//    int     flag = 0;
+//    char    *ptr = string;
 
-    /* This implementation only works for decimal numbers. */    //仅适用于10进制数字
-    if (radix != 10)
-    {
-        *ptr = 0;
-        return string;
-    }
+//    /* This implementation only works for decimal numbers. */    //仅适用于10进制数字
+//    if (radix != 10)
+//    {
+//        *ptr = 0;
+//        return string;
+//    }
 
-    if (!value)
-    {
-        *ptr++ = 0x30;
-        *ptr = 0;
-        return string;
-    }
+//    if (!value)
+//    {
+//        *ptr++ = 0x30;
+//        *ptr = 0;
+//        return string;
+//    }
 
-    /* if this is a negative value insert the minus sign. */
-    if (value < 0)
-    {
-        *ptr++ = '-';
+//    /* if this is a negative value insert the minus sign. */
+//    if (value < 0)
+//    {
+//        *ptr++ = '-';
 
-        /* Make the value positive. */
-        value *= -1;
-    }
+//        /* Make the value positive. */
+//        value *= -1;
+//    }
 
-    for (i = 10000; i > 0; i /= 10)
-    {
-        d = value / i;
+//    for (i = 10000; i > 0; i /= 10)
+//    {
+//        d = value / i;
 
-        if (d || flag)
-        {
-            *ptr++ = (char)(d + 0x30);
-            value -= (d * i);
-            flag = 1;
-        }
-    }
+//        if (d || flag)
+//        {
+//            *ptr++ = (char)(d + 0x30);
+//            value -= (d * i);
+//            flag = 1;
+//        }
+//    }
 
-    /* Null terminate the string. */
-    *ptr = 0;
+//    /* Null terminate the string. */
+//    *ptr = 0;
 
-    return string;
+//    return string;
 
-} /* NCL_Itoa */
+//} /* NCL_Itoa */
 
 /*
  * 函数名：USART1_printf
@@ -163,12 +163,12 @@ static char *itoa(int value, char *string, int radix)
  */
 void USART_printf(USART_TypeDef *USARTx, uint8_t *Data, ...)
 {
-    const char *s;
-    int d;
-    char buf[16];
+//    const char *s;
+//    int d;
+//    char buf[16];
 
-    va_list ap;
-    va_start(ap, Data);
+//    va_list ap;
+//    va_start(ap, Data);
 
  while ( *Data != 0xFF&&*Data+1!= 0xFC)     // 判断是否到达字符串结束符
     {

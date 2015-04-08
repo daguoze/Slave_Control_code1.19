@@ -1,7 +1,6 @@
 --cpu Cortex-M3
 "..\output\startup_stm32f10x_hd.o"
 "..\output\main.o"
-"..\output\oled.o"
 "..\output\stm32f10x_it.o"
 "..\output\tempad.o"
 "..\output\usart.o"

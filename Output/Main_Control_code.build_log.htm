@@ -8,345 +8,152 @@ Project File Date:  01/12/2015
 
 <h2>Output:</h2>
 Build target 'Target 1'
-compiling main.c...
+compiling usart.c...
+linking...
+Program Size: Code=5684 RO-data=336 RW-data=52 ZI-data=1084  
+"..\Output\Main_Control_code.axf" - 0 Error(s), 0 Warning(s).
+r *string, int radix)
+..\USERHARDWARE\UART\usart.c: 1 warning, 0 errors
+linking...
+Program Size: Code=5784 RO-data=336 RW-data=52 ZI-data=1084  
+"..\Output\Main_Control_code.axf" - 0 Error(s), 1 Warning(s).
+#177-D: variable "d" was declared but never referenced
+      int d;
+..\USERHARDWARE\UART\usart.c(168): warning:  #177-D: variable "buf" was declared but never referenced
+      char buf[16];
+..\USERHARDWARE\UART\usart.c(170): warning:  #550-D: variable "ap" was set but never used
+      va_list ap;
+..\USERHARDWARE\UART\usart.c(103): warning:  #177-D: function "itoa" was declared but never referenced
+  static char *itoa(int value, char *string, int radix)
+..\USERHARDWARE\UART\usart.c: 5 warnings, 0 errors
+linking...
+Program Size: Code=5800 RO-data=336 RW-data=52 ZI-data=1084  
+"..\Output\Main_Control_code.axf" - 0 Error(s), 6 Warning(s).
+arning:  #223-D: function "USART_printf" declared implicitly
+          USART_printf(USART3, command_send);
+..\USERHARDWARE\init.h(140): warning:  #223-D: function "NVIC_Configuration" declared implicitly
+          NVIC_Configuration();
+..\USERHARDWARE\init.h(142): warning:  #223-D: function "delay_ms" declared implicitly
+          delay_ms(50);
+..\USERHARDWARE\init.h(160): warning:  #223-D: function "USART_printf" declared implicitly
+          USART_printf(USART3, command_send);
+main.c(22): warning:  #223-D: function "delay_ms" declared implicitly
+        delay_ms(200);
+main.c: 11 warnings, 2 errors
+compiling usart.c...
+..\USERHARDWARE\UART\usart.h(10): error:  #130: expected a "{"
+  int fputc(int ch, FILE *f);         //想要使用printf()函数，把printf()重新定向到串口中
+..\USERHARDWARE\UART\usart.c(43): error:  #247: function "USART3_Config" has already been defined
+  void USART3_Config(void)
+..\USERHARDWARE\UART\usart.c(170): warning:  #174-D: expression has no effect
+      va_list ap;
+..\USERHARDWARE\UART\usart.c(170): error:  #65: expected a ";"
+      va_list ap;
+..\USERHARDWARE\UART\usart.c: Error:  #101: "va_list" has already been declared in the current scope
+..\USERHARDWARE\UART\usart.c(171): error:  #20: identifier "ap" is undefined
+      va_start(ap, Data);
+..\USERHARDWARE\UART\usart.c(166): warning:  #177-D: variable "s" was declared but never referenced
+      const char *s;
+..\USERHARDWARE\UART\usart.c(167): warning:  #177-D: variable "d" was declared but never referenced
+      int d;
+..\USERHARDWARE\UART\usart.c(168): warning:  #177-D: variable "buf" was declared but never referenced
+      char buf[16];
+..\USERHARDWARE\UART\usart.c(103): warning:  #177-D: function "itoa" was declared but never referenced
+  static char *itoa(int value, char *string, int radix)
+..\USERHARDWARE\UART\usart.c: 5 warnings, 5 errors
+"..\Output\Main_Control_code.axf" - 7 Error(s), 16 Warning(s).
+Target not created
+     relay7 = (hex & 0x01);
+..\USERHARDWARE\init.h(73): warning:  #223-D: function "PAout" declared implicitly
+          beep = 1;
+..\USERHARDWARE\init.h(73): error:  #137: expression must be a modifiable lvalue
+          beep = 1;
 ..\USERHARDWARE\init.h(74): warning:  #223-D: function "delay_ms" declared implicitly
           delay_ms(100);
+..\USERHARDWARE\init.h(75): error:  #137: expression must be a modifiable lvalue
+          beep = 0;
+..\USERHARDWARE\init.h(77): error:  #137: expression must be a modifiable lvalue
+          beep = 1;
+..\USERHARDWARE\init.h(79): error:  #137: expression must be a modifiable lvalue
+          beep = 0;
+..\USERHARDWARE\init.h(84): warning:  #223-D: function "PAout" declared implicitly
+          beep = 1;
+..\USERHARDWARE\init.h(84): error:  #137: expression must be a modifiable lvalue
+          beep = 1;
 ..\USERHARDWARE\init.h(85): warning:  #223-D: function "delay_ms" declared implicitly
           delay_ms(100);
+..\USERHARDWARE\init.h(86): error:  #137: expression must be a modifiable lvalue
+          beep = 0;
 ..\USERHARDWARE\init.h(94): warning:  #177-D: variable "start_delay" was declared but never referenced
       u16 start_delay = 0;
 ..\USERHARDWARE\init.h(107): warning:  #223-D: function "USART3_Config" declared implicitly
           USART3_Config();               //载波通讯
+..\USERHARDWARE\init.h(108): warning:  #223-D: function "NVIC_Configuration" declared implicitly
+          NVIC_Configuration();
 ..\USERHARDWARE\init.h(110): warning:  #223-D: function "delay_ms" declared implicitly
           delay_ms(50);
 ..\USERHARDWARE\init.h(137): warning:  #223-D: function "USART3_Config" declared implicitly
           USART3_Config();               //载波通讯
+..\USERHARDWARE\init.h(138): warning:  #223-D: function "NVIC_Configuration" declared implicitly
+          NVIC_Configuration();
 ..\USERHARDWARE\init.h(140): warning:  #223-D: function "delay_ms" declared implicitly
           delay_ms(50);
 ..\USERHARDWARE\init.h(188): warning:  #223-D: function "delay_us" declared implicitly
-                                                        delay_us(500);
+                  delay_us(500);
+..\USERHARDWARE\init.h(199): warning:  #223-D: function "PBout" declared implicitly
+                  relay_all = 1;
+..\USERHARDWARE\init.h(199): error:  #137: expression must be a modifiable lvalue
+                  relay_all = 1;
+main.c(17): warning:  #223-D: function "PBout" declared implicitly
+        relay_all = 0;
+main.c(17): error:  #137: expression must be a modifiable lvalue
+        relay_all = 0;
+main.c(20): error:  #137: expression must be a modifiable lvalue
+        relay_all = 1;
 main.c(22): warning:  #223-D: function "delay_ms" declared implicitly
-  delay_ms(200);
-main.c: 9 warnings, 0 errors
-linking...
-Program Size: Code=7894 RO-data=5062 RW-data=60 ZI-data=2748  
-"..\Output\Main_Control_code.axf" - 0 Error(s), 9 Warning(s).
-Load "..\\Output\\Main_Control_code.axf" 
-Set JLink Project File to "E:\毕设相关\开发代码\Slave_Control\Slave_Control_code1.19\USER\JLinkSettings.ini"
-* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.80g, compiled Feb 13 2014 20:50:02
-Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
-Hardware: V8.00
-S/N : 17935099 
-Feature(s) : RDI,FlashDL,FlashBP,JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: TPIU fitted.
-* JLink Info: ETM fitted.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103VE
-VTarget = 3.300V
-State of Pins: 
-TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 4000 kHz
- 
-Erase Done.
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-***JLink Error: Could not read hardware status!
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-Programming Failed!
-Error: Flash Download failed  -  "Cortex-M3"
-Load "..\\Output\\Main_Control_code.axf" 
-Set JLink Project File to "E:\毕设相关\开发代码\Slave_Control\Slave_Control_code1.19\USER\JLinkSettings.ini"
-* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.80g, compiled Feb 13 2014 20:50:02
-Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
-Hardware: V8.00
-S/N : 17935099 
-Feature(s) : RDI,FlashDL,FlashBP,JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: TPIU fitted.
-* JLink Info: ETM fitted.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103VE
-VTarget = 3.306V
-State of Pins: 
-TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 4000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Load "..\\Output\\Main_Control_code.axf" 
-Set JLink Project File to "E:\毕设相关\开发代码\Slave_Control\Slave_Control_code1.19\USER\JLinkSettings.ini"
-* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.80g, compiled Feb 13 2014 20:50:02
-Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
-Hardware: V8.00
-S/N : 17935099 
-Feature(s) : RDI,FlashDL,FlashBP,JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: TPIU fitted.
-* JLink Info: ETM fitted.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103VE
-VTarget = 3.300V
-State of Pins: 
-TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 4000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Load "..\\Output\\Main_Control_code.axf" 
-Set JLink Project File to "E:\毕设相关\开发代码\Slave_Control\Slave_Control_code1.19\USER\JLinkSettings.ini"
-* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.80g, compiled Feb 13 2014 20:50:02
-Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
-Hardware: V8.00
-S/N : 17935099 
-Feature(s) : RDI,FlashDL,FlashBP,JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: TPIU fitted.
-* JLink Info: ETM fitted.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103VE
-VTarget = 3.300V
-State of Pins: 
-TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 4000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
- selected (512 KB flash, 64 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.80g, compiled Feb 13 2014 20:50:02
-Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
-Hardware: V8.00
-S/N : 17935099 
-Feature(s) : RDI,FlashDL,FlashBP,JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: TPIU fitted.
-* JLink Info: ETM fitted.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103VE
-VTarget = 3.300V
-State of Pins: 
-TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 4000 kHz
- 
-Erase Done.
-Programming Done.
-Verify OK.
-Application running ...
-Load "..\\Output\\Main_Control_code.axf" 
-Set JLink Project File to "E:\毕设相关\开发代码\Slave_Control\Slave_Control_code1.19\USER\JLinkSettings.ini"
-* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
- 
-JLink info:
-------------
-DLL: V4.80g, compiled Feb 13 2014 20:50:02
-Firmware: J-Link ARM V8 compiled Nov 25 2013 19:20:08
-Hardware: V8.00
-S/N : 17935099 
-Feature(s) : RDI,FlashDL,FlashBP,JFlash 
- 
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found SWD-DP with ID 0x1BA01477
-* JLink Info: Found Cortex-M3 r1p1, Little endian.
-* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
-* JLink Info: TPIU fitted.
-* JLink Info: ETM fitted.
-ROMTableAddr = 0xE00FF003
- 
-Target info:
-------------
-Device: STM32F103VE
-VTarget = 3.300V
-State of Pins: 
-TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 0
-Hardware-Breakpoints: 6
-Software-Breakpoints: 8192
-Watchpoints:          4
-JTAG speed: 4000 kHz
- 
-Erase Done.
-Programming Done.
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-***JLink Error: Could not read hardware status!
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-* JLink Info: STM32F1xxx: Can not attach to CPU. Trying connect under reset.
-Contents mismatch at: 08000000H  (Flash=00H  Required=F8H) !
-Contents mismatch at: 08000001H  (Flash=BEH  Required=0AH) !
-Contents mismatch at: 08000002H  (Flash=0AH  Required=00H) !
-Contents mismatch at: 08000003H  (Flash=E0H  Required=20H) !
-Contents mismatch at: 08000004H  (Flash=0DH  Required=45H) !
-Contents mismatch at: 08000005H  (Flash=78H  Required=01H) !
-Contents mismatch at: 08000006H  (Flash=2DH  Required=00H) !
-Contents mismatch at: 08000007H  (Flash=06H  Required=08H) !
-Contents mismatch at: 08000008H  (Flash=68H  Required=C9H) !
-Contents mismatch at: 08000009H  (Flash=40H  Required=0EH) !
-Contents mismatch at: 0800000AH  (Flash=08H  Required=00H) !
-Contents mismatch at: 0800000BH  (Flash=24H  Required=08H) !
-Contents mismatch at: 0800000CH  (Flash=40H  Required=CBH) !
-Contents mismatch at: 0800000DH  (Flash=00H  Required=0EH) !
-Contents mismatch at: 0800000FH  (Flash=D3H  Required=08H) !
-Contents mismatch at: 08000010H  (Flash=58H  Required=CFH) !
-Contents mismatch at: 08000011H  (Flash=40H  Required=0EH) !
-Contents mismatch at: 08000012H  (Flash=64H  Required=00H) !
-Contents mismatch at: 08000013H  (Flash=1EH  Required=08H) !
-Contents mismatch at: 08000014H  (Flash=FAH  Required=D3H) !
-Contents mismatch at: 08000015H  (Flash=D1H  Required=0EH) !
-Contents mismatch at: 08000016H  (Flash=49H  Required=00H) !
-Contents mismatch at: 08000017H  (Flash=1CH  Required=08H) !
-Contents mismatch at: 08000018H  (Flash=52H  Required=D7H) !
-Contents mismatch at: 08000019H  (Flash=1EH  Required=0EH) !
-Contents mismatch at: 0800001BH  (Flash=2AH  Required=08H) !
-Contents mismatch at: 0800001CH  (Flash=F2H  Required=00H) !
-Contents mismatch at: 0800001DH  (Flash=D1H  Required=00H) !
-Contents mismatch at: 0800001EH  (Flash=70H  Required=00H) !
-Contents mismatch at: 0800001FH  (Flash=47H  Required=00H) !
-Contents mismatch at: 08000020H  (Flash=05H  Required=00H) !
-Contents mismatch at: 08000021H  (Flash=E0H  Required=00H) !
-Contents mismatch at: 08000022H  (Flash=03H  Required=00H) !
-Contents mismatch at: 08000023H  (Flash=78H  Required=00H) !
-Contents mismatch at: 08000024H  (Flash=40H  Required=00H) !
-Contents mismatch at: 08000025H  (Flash=1CH  Required=00H) !
-Contents mismatch at: 08000026H  (Flash=93H  Required=00H) !
-Contents mismatch at: 08000027H  (Flash=42H  Required=00H) !
-Contents mismatch at: 08000028H  (Flash=01H  Required=00H) !
-Contents mismatch at: 08000029H  (Flash=D0H  Required=00H) !
-Contents mismatch at: 0800002AH  (Flash=01H  Required=00H) !
-Contents mismatch at: 0800002BH  (Flash=20H  Required=00H) !
-Contents mismatch at: 0800002CH  (Flash=70H  Required=DBH) !
-Contents mismatch at: 0800002DH  (Flash=47H  Required=0EH) !
-Contents mismatch at: 0800002EH  (Flash=49H  Required=00H) !
-Contents mismatch at: 0800002FH  (Flash=1EH  Required=08H) !
-Contents mismatch at: 08000030H  (Flash=F7H  Required=DDH) !
-Contents mismatch at: 08000031H  (Flash=D2H  Required=0EH) !
-Contents mismatch at: 08000033H  (Flash=20H  Required=08H) !
-Contents mismatch at: 08000034H  (Flash=70H  Required=00H) !
-Contents mismatch at: 08000035H  (Flash=47H  Required=00H) !
-Contents mismatch at: 08000036H  (Flash=18H  Required=00H) !
-Contents mismatch at: 08000038H  (Flash=10H  Required=DFH) !
-Contents mismatch at: 08000039H  (Flash=B5H  Required=0EH) !
-Contents mismatch at: 0800003AH  (Flash=03H  Required=00H) !
-Contents mismatch at: 0800003BH  (Flash=46H  Required=08H) !
-Contents mismatch at: 0800003CH  (Flash=00H  Required=E1H) !
-Contents mismatch at: 0800003DH  (Flash=20H  Required=0EH) !
-Contents mismatch at: 0800003EH  (Flash=44H  Required=00H) !
-Contents mismatch at: 0800003FH  (Flash=4CH  Required=08H) !
-Contents mismatch at: 08000040H  (Flash=20H  Required=5FH) !
-Contents mismatch at: 08000041H  (Flash=60H  Required=01H) !
-Contents mismatch at: 08000042H  (Flash=44H  Required=00H) !
-Contents mismatch at: 08000043H  (Flash=48H  Required=08H) !
-Contents mismatch at: 08000044H  (Flash=60H  Required=5FH) !
-Contents mismatch at: 08000045H  (Flash=60H  Required=01H) !
-Contents mismatch at: 08000046H  (Flash=44H  Required=00H) !
-Contents mismatch at: 08000047H  (Flash=48H  Required=08H) !
-Contents mismatch at: 08000048H  (Flash=60H  Required=5FH) !
-Contents mismatch at: 08000049H  (Flash=60H  Required=01H) !
-Contents mismatch at: 0800004AH  (Flash=20H  Required=00H) !
-Contents mismatch at: 0800004BH  (Flash=46H  Required=08H) !
-Contents mismatch at: 0800004CH  (Flash=C0H  Required=5FH) !
-Contents mismatch at: 0800004DH  (Flash=69H  Required=01H) !
-Contents mismatch at: 0800004EH  (Flash=10H  Required=00H) !
-Contents mismatch at: 0800004FH  (Flash=F0H  Required=08H) !
-Contents mismatch at: 08000050H  (Flash=04H  Required=5FH) !
-Contents mismatch at: 08000051H  (Flash=0FH  Required=01H) !
-Contents mismatch at: 08000052H  (Flash=08H  Required=00H) !
-Contents mismatch at: 08000053H  (Flash=D1H  Required=08H) !
-Contents mismatch at: 08000054H  (Flash=45H  Required=5FH) !
-Contents mismatch at: 08000055H  (Flash=F2H  Required=01H) !
-Contents mismatch at: 08000056H  (Flash=55H  Required=00H) !
-Contents mismatch at: 08000057H  (Flash=50H  Required=08H) !
-Contents mismatch at: 08000058H  (Flash=40H  Required=5FH) !
-Contents mismatch at: 08000059H  (Flash=4CH  Required=01H) !
-Contents mismatch at: 0800005AH  (Flash=20H  Required=00H) !
-Contents mismatch at: 0800005BH  (Flash=60H  Required=08H) !
-Contents mismatch at: 0800005CH  (Flash=06H  Required=5FH) !
-Contents mismatch at: 0800005DH  (Flash=20H  Required=01H) !
-Contents mismatch at: 0800005EH  (Flash=60H  Required=00H) !
-Contents mismatch at: 0800005FH  (Flash=60H  Required=08H) !
-Contents mismatch at: 08000060H  (Flash=40H  Required=5FH) !
-Contents mismatch at: 08000061H  (Flash=F6H  Required=01H) !
-Contents mismatch at: 08000062H  (Flash=FFH  Required=00H) !
-Contents mismatch at: 08000063H  (Flash=70H  Required=08H) !
-Contents mismatch at: 08000064H  (Flash=A0H  Required=5FH) !
-Contents mismatch at: 08000065H  (Flash=60H  Required=01H) !
-Contents mismatch at: 08000067H  (Flash=20H  Required=08H) !
-Contents mismatch at: 08000068H  (Flash=10H  Required=5FH) !
-Too many errors to display !
-Error: Flash Download failed  -  "Cortex-M3"
+        delay_ms(200);
+main.c(24): error:  #137: expression must be a modifiable lvalue
+        relay_all = 0;
+main.c(49): warning:  #223-D: function "PCin" declared implicitly
+                if (key1 == 0 || key2 == 0 || key3 == 0)
+main.c(50): warning:  #223-D: function "PCout" declared implicitly
+                        PCout(9) = 1;
+main.c(50): error:  #137: expression must be a modifiable lvalue
+                        PCout(9) = 1;
+main.c(52): error:  #137: expression must be a modifiable lvalue
+                        PCout(9) = 01;
+main.c: 21 warnings, 28 errors
+compiling command.c...
+..\USERHARDWARE\command.c(16): warning:  #177-D: variable "i" was declared but never referenced
+      u8 i;
+..\USERHARDWARE\command.c(69): warning:  #1-D: last line of file ends without a newline
+  }
+..\USERHARDWARE\command.c: 2 warnings, 0 errors
+"..\Output\Main_Control_code.axf" - 28 Error(s), 23 Warning(s).
+Target not created
+ART\usart.c(168): warning:  #177-D: variable "buf" was declared but never referenced
+      char buf[16];
+..\USERHARDWARE\UART\usart.c(170): warning:  #550-D: variable "ap" was set but never used
+      va_list ap;
+..\USERHARDWARE\UART\usart.c(103): warning:  #177-D: function "itoa" was declared but never referenced
+  static char *itoa(int value, char *string, int radix)
+..\USERHARDWARE\UART\usart.c: 5 warnings, 0 errors
+compiling command.c...
+..\USERHARDWARE\command.c(16): warning:  #177-D: variable "i" was declared but never referenced
+      u8 i;
+..\USERHARDWARE\command.c(69): warning:  #1-D: last line of file ends without a newline
+  }
+..\USERHARDWARE\command.c: 2 warnings, 0 errors
+compiling misc.c...
+compiling stm32f10x_dbgmcu.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_tim.c...
+compiling stm32f10x_usart.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_adc.c...
+compiling core_cm3.c...
+compiling system_stm32f10x.c...
+"..\Output\Main_Control_code.axf" - 28 Error(s), 28 Warning(s).
+Target not created

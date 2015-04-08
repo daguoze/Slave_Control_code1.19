@@ -29,10 +29,10 @@
 ..\output\main.o: ..\FWlib\inc\stm32f10x_wwdg.h
 ..\output\main.o: ..\FWlib\inc\misc.h
 ..\output\main.o: ..\USERHARDWARE\init.h
-..\output\main.o: ..\USERHARDWARE\OLED\oled.h
-..\output\main.o: ..\USERHARDWARE\OLED\sys.h
 ..\output\main.o: ..\USERHARDWARE\GPIO.h
 ..\output\main.o: ..\USERHARDWARE\TEMP\tempad.h
 ..\output\main.o: D:\Keil\ARM\RV31\INC\stdio.h
 ..\output\main.o: ..\USERHARDWARE\UART\usart.h
 ..\output\main.o: D:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+..\output\main.o: ..\USERHARDWARE\OLED\sys.h
+..\output\main.o: ..\USERHARDWARE\OLED\delay.h

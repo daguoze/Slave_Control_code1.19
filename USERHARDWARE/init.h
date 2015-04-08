@@ -1,10 +1,12 @@
 #ifndef _INIT_H_
 #define _INIT_H_
-#include "oled.h"
+
 #include "GPIO.h"
 #include "tempad.h"
 #include "stdio.h"
 #include "usart.h"
+#include "sys.h"
+#include "delay.h"
 
 /* ADC1转换的电压值通过MDA方式传到sram*/
 extern __IO u16 ADC_ConvertedValue;
@@ -183,18 +185,18 @@ void command_handle()
         case 0x01://控制命令
             if (recive_command[1] == 0x00) //主机命令
             {
-				
-							USART_SendData(USART1, 0x11);
-							delay_us(500);
-									USART_SendData(USART1, 0x11);
-							delay_us(500);
-									USART_SendData(USART1,0x11);
-						delay_us(500);
-										USART_SendData(USART1,0xcc);
-							delay_us(500);
-										USART_SendData(USART1,0xaa);
-			delay_us(500);
-							
+
+                USART_SendData(USART1, 0x11);
+                delay_us(500);
+                USART_SendData(USART1, 0x11);
+                delay_us(500);
+                USART_SendData(USART1, 0x11);
+                delay_us(500);
+                USART_SendData(USART1, 0xcc);
+                delay_us(500);
+                USART_SendData(USART1, 0xaa);
+                delay_us(500);
+
                 relay_splithex(recive_command[2]);
                 relay_all = 1;
             }

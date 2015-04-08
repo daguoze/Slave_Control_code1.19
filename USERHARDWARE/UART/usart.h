@@ -6,6 +6,7 @@
 
 void USART1_Config(void);               //关于串口USART1的配置
 void USART2_Config(void);               //关于串口USART2的配置
+void USART3_Config(void);
 int fputc(int ch, FILE *f);         //想要使用printf()函数，把printf()重新定向到串口中
 void USART_printf(USART_TypeDef *USARTx, uint8_t *Data, ...); //格式化输出，类似于C库中的printf，但这里没有用到C库
 //里面有函数itoa（）    里面的“...”是不确定里面的数据的个数，可以写多个
