@@ -1,11 +1,11 @@
 /******************** (C) COPYRIGHT 2015 Shell Era **************************
- * ¿â°æ±¾  £ºST3.5.0
+ * åº“ç‰ˆæœ¬  ï¼šST3.5.0
  *
- * ×÷Õß    £ºGuo Zeyu
+ * ä½œè€…    ï¼šGuo Zeyu
  **********************************************************************************/
 #include "stm32f10x.h"
 #include "init.h"
-int g_ms;
+
 void select_port()
 {
 
@@ -126,17 +126,10 @@ int main(void)
 	select_port();
 	while (1)
 	{
-		
-		if(g_ms==4000)
-		{
-					relay_splithex( array_hex());
-		i=0;
-			g_ms=0;
-		}
 
 		if (key3 == 0)
 		{
-g_ms=0;
+
 			if (	get_sockettype.select_array[i][0] == 1)
 
 			{
@@ -170,14 +163,6 @@ g_ms=0;
 		}
 		command_handle();
 	}
-}
-void TIM1_UP_IRQHandler(void)//1ms
-{
-	TIM_ClearITPendingBit(TIM1, TIM_FLAG_Update); //ÇåÖÐ¶Ï
-	g_ms++;
-	
-
-//	relay_splithex(0xff);
 }
 
 

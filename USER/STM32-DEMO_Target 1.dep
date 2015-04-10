@@ -1,6 +1,6 @@
 Dependencies for Project 'STM32-DEMO', Target 'Target 1': (DO NOT MODIFY !)
 F (..\CMSIS\startup\startup_stm32f10x_hd.s)(0x52AD7497)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I D:\Keil\ARM\RV31\INC-I D:\Keil\ARM\CMSIS\Include-I D:\Keil\ARM\Inc\ST\STM32F10x--list ..\listing\startup_stm32f10x_hd.lst --xref -o ..\output\startup_stm32f10x_hd.o --depend ..\output\startup_stm32f10x_hd.d)
-F (.\main.c)(0x5525361C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\CMSIS -I..\USER -I..\FWlib\inc -I..\FWlib\src -I..\USERHARDWARE -I..\USERHARDWARE\TEMP -I..\USERHARDWARE\UART -I..\USERHARDWARE\OLED-I D:\Keil\ARM\RV31\INC-I D:\Keil\ARM\CMSIS\Include-I D:\Keil\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
+F (.\main.c)(0x55273CBC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\CMSIS -I..\USER -I..\FWlib\inc -I..\FWlib\src -I..\USERHARDWARE -I..\USERHARDWARE\TEMP -I..\USERHARDWARE\UART -I..\USERHARDWARE\OLED-I D:\Keil\ARM\RV31\INC-I D:\Keil\ARM\CMSIS\Include-I D:\Keil\ARM\Inc\ST\STM32F10x-DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
 I (..\CMSIS\stm32f10x.h)(0x52AD7492)
 I (..\CMSIS\core_cm3.h)(0x52AD7492)
 I (D:\Keil\ARM\ARMCC\include\stdint.h)(0x51C7C554)
@@ -29,7 +29,7 @@ I (..\FWlib\inc\stm32f10x_tim.h)(0x52AD7490)
 I (..\FWlib\inc\stm32f10x_usart.h)(0x52AD7491)
 I (..\FWlib\inc\stm32f10x_wwdg.h)(0x52AD7491)
 I (..\FWlib\inc\misc.h)(0x52AD7497)
-I (..\USERHARDWARE\init.h)(0x55252D0B)
+I (..\USERHARDWARE\init.h)(0x552737D6)
 I (..\USERHARDWARE\GPIO.h)(0x55248CFD)
 I (..\USERHARDWARE\TEMP\tempad.h)(0x4FC1ED6A)
 I (D:\Keil\ARM\RV31\INC\stdio.h)(0x4D461916)

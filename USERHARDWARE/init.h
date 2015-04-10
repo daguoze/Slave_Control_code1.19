@@ -110,11 +110,43 @@ void module_discriminate()
 
 }
 
+
+
+void NVIC_init()
+
+
+
+{
+
+	NVIC_InitTypeDef NVIC_InitStructure; 
+		TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+		RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE); 
+		TIM_DeInit(TIM1);
+	  TIM_TimeBaseStructure.TIM_Period=1000;		 								/* 自动重装载寄存器周期的值(计数值) */
+
+    TIM_TimeBaseStructure.TIM_Prescaler= (72 - 1);				    /* 时钟预分频数 72M/72 */
+	TIM_TimeBaseStructure.TIM_ClockDivision=TIM_CKD_DIV1; //采样分频 
+	TIM_TimeBaseStructure.TIM_CounterMode=TIM_CounterMode_Up;//计数方式 
+	TIM_TimeBaseStructure.TIM_RepetitionCounter = 0; 
+	TIM_TimeBaseInit(TIM1, & TIM_TimeBaseStructure);
+	TIM_ClearFlag(TIM1, TIM_FLAG_Update); //清除溢出中断标志
+	TIM_ITConfig(TIM1,TIM_IT_Update,ENABLE);
+	TIM_Cmd(TIM1, ENABLE);	 
+	
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1); 
+	NVIC_InitStructure.NVIC_IRQChannel = TIM1_UP_IRQn; //通道 TIM5 
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;//占优先级 
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0; //副优先级 
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE; 
+	NVIC_Init(&NVIC_InitStructure); 	
+
+}
 void init_all()
 {
 //    u16 start_delay = 0;
     SystemInit();
     GPIO_Config();
+	NVIC_init();
 
 }
 u8 command_send[9] = {0};
